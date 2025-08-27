@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://d1eg0dkmi2dxv"]
+
+[ext_resource type="Script" path="res://scripts/interaction_area.gd" id="1_yysew"]
+
+[node name="InteractionArea" type="Area2D"]
+light_mask = 2
+visibility_layer = 0
+script = ExtResource("1_yysew")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

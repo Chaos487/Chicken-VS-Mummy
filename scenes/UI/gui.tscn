@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=3 uid="uid://buxwmnno5hopm"]
+
+[ext_resource type="Script" path="res://scripts/gui.gd" id="1_r4j3f"]
+
+[sub_resource type="GDScript" id="GDScript_4n305"]
+script/source = "extends CanvasLayer
+@onready var killcount: Label = $killcount
+
+func update_kill_count(mummy_kill_count: int) -> void:
+	killcount.text = \"Kills: \" + str(mummy_kill_count)
+"
+
+[node name="GUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_r4j3f")
+
+[node name="ui" type="CanvasLayer" parent="."]
+script = SubResource("GDScript_4n305")
+
+[node name="killcount" type="Label" parent="ui"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -200.5
+offset_right = 200.5
+offset_bottom = 102.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "Defend Yourself!"
